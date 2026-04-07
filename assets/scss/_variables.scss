@@ -1,0 +1,68 @@
+// =========================================
+// _variables.scss
+// Landing Page - Estudio Jurídico Penal
+// =========================================
+
+// --- COLORES ---
+$azul-profundo:     #0B1622;
+$azul-medio:        #1A2B3C;
+$azul-claro:        #2C3E55;    // para hovers y bordes sutiles
+$dorado:            #C9A84C;
+$dorado-claro:      #E8C96A;    // para hovers dorados
+$dorado-oscuro:     #A07830;    // para sombras y detalles
+$crema:             #F5F0E8;
+$crema-oscuro:      #E8E0D0;    // para separadores y fondos alternos
+$blanco:            #FFFFFF;
+$texto-claro:       #B0B8C1;    // texto secundario sobre fondos oscuros
+$texto-oscuro:      #1A1A1A;    // texto sobre fondos claros
+
+// --- TIPOGRAFÍAS ---
+$font-titulo:       'Playfair Display', Georgia, serif;
+$font-cuerpo:       'Raleway', Arial, sans-serif;
+
+// --- TAMAÑOS DE FUENTE ---
+$fs-xs:             0.75rem;    // 12px
+$fs-sm:             0.875rem;   // 14px
+$fs-base:           1rem;       // 16px
+$fs-md:             1.125rem;   // 18px
+$fs-lg:             1.5rem;     // 24px
+$fs-xl:             2rem;       // 32px
+$fs-xxl:            2.75rem;    // 44px
+$fs-hero:           3.5rem;     // 56px
+
+// --- PESOS DE FUENTE ---
+$fw-light:          300;
+$fw-regular:        400;
+$fw-semibold:       600;
+$fw-bold:           700;
+
+// --- ESPACIADOS ---
+$espaciado-xs:      0.5rem;     // 8px
+$espaciado-sm:      1rem;       // 16px
+$espaciado-md:      2rem;       // 32px
+$espaciado-lg:      4rem;       // 64px
+$espaciado-xl:      6rem;       // 96px
+
+// --- BORDES ---
+$borde-radio-sm:    4px;
+$borde-radio-md:    8px;
+$borde-radio-lg:    16px;
+$borde-dorado:      1px solid $dorado;
+$borde-azul:        1px solid $azul-claro;
+
+// --- SOMBRAS ---
+$sombra-sm:         0 2px 8px rgba(0, 0, 0, 0.3);
+$sombra-md:         0 4px 20px rgba(0, 0, 0, 0.4);
+$sombra-dorada:     0 4px 20px rgba(201, 168, 76, 0.2);
+
+// --- TRANSICIONES ---
+$transicion-base:   all 0.3s ease;
+$transicion-rapida: all 0.15s ease;
+
+// --- BREAKPOINTS (referencia Bootstrap) ---
+// xs: < 576px    (mobile)
+// sm: >= 576px
+// md: >= 768px
+// lg: >= 992px
+// xl: >= 1200px
+// xxl: >= 1400px

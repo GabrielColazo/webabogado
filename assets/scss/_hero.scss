@@ -1,0 +1,221 @@
+@use 'variables' as *;
+// =========================================
+// _hero.scss
+// =========================================
+
+// --- Animaciones ---
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes flotando {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  25% { opacity: 0.5; }
+  50% {
+    transform: translateY(-60px) translateX(20px);
+    opacity: 0.3;
+  }
+  75% { opacity: 0.5; }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+}
+
+// =========================================
+// HERO
+// =========================================
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../img/fondo.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  // --- Overlay ---
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba($azul-profundo, 0.92) 0%,
+      rgba($azul-medio, 0.85) 60%,
+      rgba($azul-profundo, 0.95) 100%
+    );
+  }
+
+  // --- Partículas ---
+  .hero-particula {
+    position: absolute;
+    background-color: $dorado;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: flotando linear infinite;
+  }
+
+  // --- Eyebrow ---
+  .hero-eyebrow {
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    color: $dorado;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: $espaciado-sm;
+    animation: fadeInDown 0.8s ease both;
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  // --- Título ---
+  .hero-titulo {
+    font-family: $font-titulo;
+    font-size: $fs-xxl;
+    font-weight: $fw-bold;
+    color: $crema;
+    line-height: 1.15;
+    margin-bottom: $espaciado-sm;
+    animation: fadeInDown 0.8s ease both;
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+    span {
+      color: $dorado;
+    }
+  }
+
+  // --- Bajada ---
+  .hero-bajada {
+    font-family: $font-cuerpo;
+    font-size: $fs-md;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    line-height: 1.8;
+    margin-bottom: $espaciado-sm;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.8s ease both;
+    animation-delay: 0.8s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  // --- Botones ---
+  .d-flex {
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  // --- Cards ---
+  .hero-cards {
+    margin-top: $espaciado-lg;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-card:nth-child(1) .hero-card-content { animation-delay: 1.2s; }
+  .hero-card:nth-child(2) .hero-card-content { animation-delay: 1.4s; }
+  .hero-card:nth-child(3) .hero-card-content { animation-delay: 1.6s; }
+
+  .hero-card {
+    border-radius: $borde-radio-md;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba($dorado, 0.3);
+  border-top: 2px solid rgba($dorado, 0.8);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+  // --- Imagen arriba ---
+  .hero-card-img {
+    overflow: hidden;
+    height: 180px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+
+    // --- Texto abajo ---
+  .hero-card-content {
+    background-color: rgba($azul-medio, 0.95);
+    padding: $espaciado-sm;
+    text-align: center;
+    animation: fadeInUp 0.8s ease both;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+    h3 {
+      font-family: $font-titulo;
+      font-size: $fs-md;
+      font-weight: $fw-bold;
+      color: $dorado;
+      margin-bottom: $espaciado-xs;
+    }
+
+    p {
+      font-family: $font-cuerpo;
+      font-size: $fs-sm;
+      font-weight: $fw-light;
+      color: $texto-claro;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+  }
+
+  // --- Hover ---
+  &:hover {
+    box-shadow: 0 8px 32px rgba($dorado, 0.3);
+    border-color: rgba($dorado, 0.7);
+
+    .hero-card-img img {
+      transform: scale(1.08);
+    }
+  }
+
+  &.animado {
+    animation: none;
+  }
+}
+}

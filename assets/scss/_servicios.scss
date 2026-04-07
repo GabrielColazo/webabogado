@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+@use 'variables' as *;
+// =========================================
+// _servicios.scss
+// =========================================
+
+.servicios {
+  background-color: $azul-medio;
+
+  // --- Servicio item ---
+  .servicio-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $espaciado-sm;
+    padding: $espaciado-md;
+    border-bottom: 1px solid rgba($dorado, 0.15);
+    border-left: 3px solid transparent;
+    transition: $transicion-base;
+    cursor: default;
+
+    &:hover {
+      border-left-color: $dorado;
+      background-color: rgba($azul-medio, 0.5);
+
+      .servicio-numero {
+        color: $dorado-claro;
+        transform: translateY(-3px);
+      }
+
+      .servicio-titulo {
+        color: $dorado-claro;
+      }
+    }
+  }
+
+  // --- Número ---
+  .servicio-numero {
+    font-family: $font-titulo;
+    font-size: 3.5rem;
+    font-weight: $fw-bold;
+    color: rgba($dorado, 0.25);
+    line-height: 1;
+    min-width: 80px;
+    transition: $transicion-base;
+  }
+
+  // --- Info ---
+  .servicio-info {
+    padding-top: 0.5rem;
+  }
+
+  // --- Título ---
+  .servicio-titulo {
+    font-family: $font-titulo;
+    font-size: $fs-md;
+    font-weight: $fw-bold;
+    color: $crema;
+    margin-bottom: $espaciado-xs;
+    transition: $transicion-base;
+  }
+
+  // --- Texto ---
+  .servicio-texto {
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+}

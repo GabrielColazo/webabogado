@@ -1,0 +1,138 @@
+@use 'variables' as *;
+// =========================================
+// _sobremi.scss
+// =========================================
+
+.sobremi {
+  background-color: $azul-profundo;
+
+  // --- Textos ---
+  .sobremi-texto {
+    font-family: $font-cuerpo;
+    font-size: $fs-base;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    line-height: 1.8;
+    margin-bottom: $espaciado-sm;
+  }
+
+  // --- Imagen ---
+  .sobremi-imagen-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba($dorado, 0.4);
+      border-radius: $borde-radio-md;
+      z-index: 0;
+      transition: $transicion-base;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba($dorado, 0.2);
+      border-radius: $borde-radio-md;
+      z-index: 0;
+      transition: $transicion-base;
+    }
+
+    &:hover {
+      &::before {
+        border-color: rgba($dorado, 0.7);
+        top: -20px;
+        left: -20px;
+      }
+      &::after {
+        border-color: rgba($dorado, 0.4);
+        bottom: -20px;
+        right: -20px;
+      }
+    }
+  }
+
+  .sobremi-imagen {
+    position: relative;
+    z-index: 1;
+    border-radius: $borde-radio-md;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  // --- Estadísticas ---
+  .sobremi-stat {
+    text-align: center;
+    padding: $espaciado-sm;
+    border: 1px solid rgba($dorado, 0.2);
+    border-radius: $borde-radio-md;
+    transition: $transicion-base;
+
+    &:hover {
+      border-color: rgba($dorado, 0.6);
+      background-color: rgba($azul-medio, 0.5);
+    }
+  }
+
+  .sobremi-stat-numero {
+    display: block;
+    font-family: $font-titulo;
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    color: $dorado;
+    line-height: 1.2;
+  }
+
+  .sobremi-stat-label {
+    display: block;
+    font-family: $font-cuerpo;
+    font-size: $fs-xs;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  // --- Lista ---
+  .sobremi-lista {
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-family: $font-cuerpo;
+      font-size: $fs-sm;
+      font-weight: $fw-regular;
+      color: $texto-claro;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba($dorado, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: $transicion-base;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: $crema;
+        padding-left: 8px;
+      }
+
+      i {
+        color: $dorado;
+        font-size: $fs-sm;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

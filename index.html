@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Martínez | Estudio Jurídico Penal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS compilado -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!-- ================================
+  BANNER DEMO
+================================ -->
+<div class="demo-banner">
+  <div class="container">
+    <p class="demo-banner-texto">
+      <i class="bi bi-info-circle-fill"></i>
+      Este sitio es una simulación creada con fines de demostración para el portfolio de 
+      <a href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a>
+      — No representa un estudio jurídico real.
+    </p>
+  </div>
+</div>
+
+    <!-- ================================
+  NAVBAR
+================================ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#inicio">
+                <span class="navbar-logo-titulo">
+                    <i class="bi bi-bank"></i> Dr. Martínez
+                </span>
+                <span class="navbar-logo-subtitulo">Estudio Jurídico Penal</span>
+            </a>
+
+            <!-- Toggle mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobremi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================================
+  HERO
+================================ -->
+    <section id="inicio" class="hero d-flex align-items-center">
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative">
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7 text-center px-4 px-md-0">
+
+                    <p class="hero-eyebrow">Estudio Jurídico Penal</p>
+
+                    <h1 class="hero-titulo">Su mejor defensa <br class="d-none d-md-block"> comienza aquí</h1>
+
+                    <p class="hero-bajada">Más de 20 años defendiendo sus derechos con experiencia, estrategia y
+                        compromiso. Atención personalizada en cada caso.</p>
+
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mt-4 mb-5">
+                        <a href="#contacto" class="btn-dorado d-inline-block">Consulta gratuita</a>
+                        <a href="#servicios" class="btn-outline d-inline-block">Ver servicios</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Cards superpuestas -->
+            <div class="row g-3 g-md-4 hero-cards mt-2 mt-md-4">
+
+                <div class="col-12 col-md-4">
+                    <div class="hero-card">
+                        <div class="hero-card-img">
+                            <img src="assets/img/card-defensa.webp" alt="Defensa penal" class="img-fluid w-100">
+                        </div>
+                        <div class="hero-card-content">
+                            <h3>Defensa penal</h3>
+                            <p>Representación integral desde la investigación hasta la sentencia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="hero-card">
+                        <div class="hero-card-img">
+                            <img src="assets/img/card-guardia.webp" alt="Guardia 24/7" class="img-fluid w-100">
+                        </div>
+                        <div class="hero-card-content">
+                            <h3>Guardia 24/7</h3>
+                            <p>Disponibles las 24 horas para atender su urgencia penal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="hero-card">
+                        <div class="hero-card-img">
+                            <img src="assets/img/card-consulta.webp" alt="Primera consulta gratis"
+                                class="img-fluid w-100">
+                        </div>
+                        <div class="hero-card-content">
+                            <h3>Primera consulta gratis</h3>
+                            <p>Sin compromiso. Evaluamos su caso de forma confidencial.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================
+  SERVICIOS
+================================ -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-titulo">Áreas de práctica</h2>
+                    <div class="separador"></div>
+                    <p class="section-subtitulo">Defensa especializada en todas las ramas del derecho penal</p>
+                </div>
+            </div>
+
+            <div class="row g-0">
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">01</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Defensa Penal</h3>
+                            <p class="servicio-texto">Representación integral en causas penales desde la primera
+                                declaración hasta la sentencia definitiva. Estrategia jurídica personalizada para cada
+                                caso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">02</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Delitos Económicos</h3>
+                            <p class="servicio-texto">Defensa especializada en fraude, estafa, lavado de activos y
+                                delitos contra la propiedad intelectual y el patrimonio empresarial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">03</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Violencia Familiar</h3>
+                            <p class="servicio-texto">Asistencia legal integral en causas de violencia doméstica.
+                                Representamos tanto a víctimas como a imputados garantizando un proceso justo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">04</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Accidentes de Tránsito</h3>
+                            <p class="servicio-texto">Defensa en causas penales derivadas de accidentes viales con
+                                lesiones graves o muerte. Actuamos desde el momento del hecho.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">05</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Derecho Penal Empresarial</h3>
+                            <p class="servicio-texto">Asesoramiento y defensa de personas jurídicas y directivos en
+                                causas penales corporativas, compliance y responsabilidad penal empresaria.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="servicio-item">
+                        <span class="servicio-numero">06</span>
+                        <div class="servicio-info">
+                            <h3 class="servicio-titulo">Recursos y Apelaciones</h3>
+                            <p class="servicio-texto">Revisión exhaustiva de sentencias y presentación de recursos ante
+                                cámaras y tribunales superiores. Experiencia en casación penal.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
+  SOBRE MÍ
+================================ -->
+    <section id="sobremi" class="sobremi">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Imagen -->
+                <div class="col-12 col-lg-5 text-center">
+                    <div class="sobremi-imagen-wrapper">
+                        <img src="assets/img/perfil.webp" alt="Dr. Martínez" class="sobremi-imagen img-fluid">
+                    </div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="col-12 col-lg-7 text-center text-lg-start">
+                    <h2 class="section-titulo">Sobre el Dr. Martínez</h2>
+                    <div class="separador ms-0"></div>
+
+                    <p class="sobremi-texto">Abogado penalista con más de 20 años de trayectoria en el fuero penal de la
+                        provincia de Buenos Aires. Egresado de la Universidad de Buenos Aires con posgrado en Derecho
+                        Penal Económico.</p>
+
+                    <p class="sobremi-texto">Mi enfoque es claro: cada cliente merece una defensa estratégica,
+                        personalizada y basada en un profundo conocimiento del sistema judicial argentino.</p>
+
+                    <!-- Estadísticas -->
+                    <div class="row g-3 sobremi-stats mt-2 mb-4">
+                        <div class="col-6 col-md-3">
+                            <div class="sobremi-stat">
+                                <span class="sobremi-stat-numero">20+</span>
+                                <span class="sobremi-stat-label">Años de experiencia</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="sobremi-stat">
+                                <span class="sobremi-stat-numero">500+</span>
+                                <span class="sobremi-stat-label">Casos defendidos</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="sobremi-stat">
+                                <span class="sobremi-stat-numero">95%</span>
+                                <span class="sobremi-stat-label">Causas resueltas</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="sobremi-stat">
+                                <span class="sobremi-stat-numero">24/7</span>
+                                <span class="sobremi-stat-label">Disponibilidad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lista -->
+                    <ul class="sobremi-lista">
+                        <li><i class="bi bi-check-circle-fill"></i> Matrícula federal activa</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Miembro del Colegio de Abogados de Buenos Aires</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Docente universitario en Derecho Penal</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Atención en todo el territorio nacional</li>
+                    </ul>
+
+                    <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer"
+                        class="btn-dorado mt-4 d-inline-block">Consultá ahora</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================================
+  TESTIMONIOS
+================================ -->
+    <section id="testimonios" class="testimonios">
+        <div class="container">
+
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-titulo">Lo que dicen mis clientes</h2>
+                    <div class="separador"></div>
+                    <p class="section-subtitulo">La confianza de quienes me eligieron es mi mayor respaldo</p>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="testimonio-card">
+                        <div class="testimonio-comilla">"</div>
+                        <p class="testimonio-texto">El Dr. Martínez logró lo que otros dijeron que era imposible. Su
+                            profesionalismo y dedicación fueron clave para el resultado favorable en mi causa.</p>
+                        <div class="testimonio-separador"></div>
+                        <div class="testimonio-autor">
+                            <div class="testimonio-iniciales">CR</div>
+                            <div>
+                                <span class="testimonio-nombre">Carlos R.</span>
+                                <span class="testimonio-cargo">Causa penal económica</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-estrellas">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="testimonio-card">
+                        <div class="testimonio-comilla">"</div>
+                        <p class="testimonio-texto">Desde el primer momento me explicó todo con claridad. Me sentí
+                            contenida y bien representada durante todo el proceso judicial.</p>
+                        <div class="testimonio-separador"></div>
+                        <div class="testimonio-autor">
+                            <div class="testimonio-iniciales">MG</div>
+                            <div>
+                                <span class="testimonio-nombre">María G.</span>
+                                <span class="testimonio-cargo">Causa de violencia familiar</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-estrellas">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="testimonio-card">
+                        <div class="testimonio-comilla">"</div>
+                        <p class="testimonio-texto">Conoce el sistema judicial a la perfección. Su estrategia fue
+                            impecable y el resultado superó todas mis expectativas. Lo recomiendo ampliamente.</p>
+                        <div class="testimonio-separador"></div>
+                        <div class="testimonio-autor">
+                            <div class="testimonio-iniciales">RM</div>
+                            <div>
+                                <span class="testimonio-nombre">Roberto M.</span>
+                                <span class="testimonio-cargo">Defensa penal</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-estrellas">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
+  FAQ
+================================ -->
+    <section id="faq" class="faq">
+        <div class="container">
+
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-titulo">Preguntas frecuentes</h2>
+                    <div class="separador"></div>
+                    <p class="section-subtitulo">Respuestas a las dudas más comunes</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+
+                    <div class="accordion" id="accordionFaq">
+
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-boton collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Qué hago si fui detenido?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body faq-respuesta">
+                                    Lo primero es no declarar sin la presencia de su abogado. Tiene derecho a
+                                    comunicarse con un letrado de confianza antes de prestar declaración. Contácteme de
+                                    inmediato al número de guardia disponible las 24 horas.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-boton collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Cuánto cuesta una consulta?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body faq-respuesta">
+                                    La primera consulta es gratuita y sin compromiso. Durante ese encuentro evaluamos su
+                                    caso y le informamos sobre los honorarios profesionales de manera clara y
+                                    transparente.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-boton collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Trabajan en todo el país?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body faq-respuesta">
+                                    Sí. Contamos con matrícula federal y atendemos causas en toda la República
+                                    Argentina, con sede principal en la Ciudad Autónoma de Buenos Aires.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-boton collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    ¿Qué información necesito para la primera consulta?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body faq-respuesta">
+                                    Cualquier documentación relacionada con su caso: notificaciones judiciales,
+                                    citaciones, contratos o cualquier elemento que considere relevante. Si no tiene
+                                    nada, igualmente podemos hablar y orientarlo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-boton collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    ¿Puedo cambiar de abogado en medio de un proceso?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body faq-respuesta">
+                                    Sí, es su derecho. Puede cambiar de defensor en cualquier etapa del proceso. Nos
+                                    encargamos de gestionar el traspaso del expediente y ponernos al día con la causa
+                                    para garantizar la continuidad de su defensa.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================
+  CONTACTO
+================================ -->
+<section id="contacto" class="contacto">
+  <div class="container">
+
+    <div class="row text-center mb-5">
+      <div class="col-12">
+        <h2 class="section-titulo">Contacto</h2>
+        <div class="separador"></div>
+        <p class="section-subtitulo">Estamos disponibles para atender su consulta</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-5">
+
+      <!-- Datos de contacto -->
+      <div class="col-12 col-md-4">
+        <div class="contacto-datos">
+
+          <div class="contacto-dato-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <span class="contacto-dato-titulo">Teléfono</span>
+              <a href="tel:+541100000000">+54 11 0000-0000</a>
+            </div>
+          </div>
+
+          <div class="contacto-dato-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <span class="contacto-dato-titulo">Email</span>
+              <a href="mailto:contacto@estudiomartinez.com">contacto@estudiomartinez.com</a>
+            </div>
+          </div>
+
+          <div class="contacto-dato-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <span class="contacto-dato-titulo">Dirección</span>
+              <span>Av. Corrientes 1234, Piso 5<br>Ciudad Autónoma de Buenos Aires</span>
+            </div>
+          </div>
+
+          <div class="contacto-dato-item">
+            <i class="bi bi-clock-fill"></i>
+            <div>
+              <span class="contacto-dato-titulo">Horario</span>
+              <span>Lun a Vie: 9:00 — 18:00 hs<br>Guardia penal: 24/7</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="col-12 col-md-5">
+        <div class="contacto-form">
+
+          <div class="mb-3">
+            <input type="text" class="contacto-input" placeholder="Nombre completo">
+          </div>
+
+          <div class="mb-3">
+            <input type="email" class="contacto-input" placeholder="Email">
+          </div>
+
+          <div class="mb-3">
+            <input type="tel" class="contacto-input" placeholder="Teléfono">
+          </div>
+
+          <div class="mb-4">
+            <textarea class="contacto-input" rows="4" placeholder="Su consulta..."></textarea>
+          </div>
+
+          <button type="button" class="btn-dorado w-100">Enviar consulta</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+  FOOTER
+================================ -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="row g-4 align-items-start py-4 justify-content-between">
+
+      <!-- Logo y descripción -->
+      <div class="col-12 col-md-6">
+        <div class="footer-brand">
+          <span class="footer-logo-titulo">
+            <i class="bi bi-bank"></i> Dr. Martínez
+          </span>
+          <p class="footer-logo-subtitulo">Estudio Jurídico Penal</p>
+        </div>
+        <p class="footer-texto">Defensa penal profesional con más de 20 años de experiencia en el fuero penal argentino.</p>
+        <div class="footer-redes">
+          <a href="#" class="footer-red" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="footer-red" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-red" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="footer-red" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <div class="col-12 col-md-3">
+        <h4 class="footer-titulo">Navegación</h4>
+        <ul class="footer-lista">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sobremi">Sobre mí</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-copy">
+          <p>&copy; 2025 Dr. Martínez — Estudio Jurídico Penal. Todos los derechos reservados.</p>
+          <p class="footer-demo">Sitio de demostración creado para el portfolio de <a href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================================
+  MODAL OFERTA
+================================ -->
+<div class="modal fade" id="modalOferta" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered mx-5 mx-sm-auto">
+    <div class="modal-content modal-custom">
+
+      <!-- Cerrar -->
+      <button type="button" class="modal-cerrar" data-bs-dismiss="modal" aria-label="Cerrar">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <!-- Contenido -->
+      <div class="modal-body text-center p-5">
+
+        <div class="modal-icono">
+          <i class="bi bi-bank"></i>
+        </div>
+
+        <p class="modal-eyebrow">Oferta por tiempo limitado</p>
+
+        <h3 class="modal-titulo">Primera consulta gratuita y sin compromiso</h3>
+
+        <p class="modal-texto">Evaluamos su caso de forma confidencial y le brindamos orientación jurídica sin cargo. No espere, actúe hoy.</p>
+
+        <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" class="btn-dorado d-inline-block mt-2">
+          Quiero mi consulta gratis
+        </a>
+
+        <p class="modal-pie">* Válido para nuevos clientes. Por tiempo limitado.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================
+  WHATSAPP FLOTANTE
+================================ -->
+<a href="https://wa.me/5491100000000" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS propio -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

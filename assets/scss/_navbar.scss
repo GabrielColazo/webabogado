@@ -1,0 +1,126 @@
+@use 'variables' as *;
+// =========================================
+// _navbar.scss
+// =========================================
+
+#navbar {
+ background-color: rgba($azul-profundo, 0.95); // ← fondo fijo siempre
+  border-bottom: 1px solid rgba($dorado, 0.3);  // ← línea dorada abajo
+
+  // --- Navbar con scroll (clase que agrega JS) ---
+  &.scrolled {
+    background-color: $azul-profundo;
+    box-shadow: $sombra-md;
+    padding: 0.25rem 0;
+  }
+
+  // --- Logo ---
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+
+    .navbar-logo-titulo {
+      font-family: $font-titulo;
+      font-size: $fs-md;
+      font-weight: $fw-bold;
+      color: $dorado;
+      letter-spacing: 0.02em;
+    }
+
+    .navbar-logo-subtitulo {
+      font-family: $font-cuerpo;
+      font-size: $fs-xs;
+      font-weight: $fw-light;
+      color: $texto-claro;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  }
+
+  // --- Links ---
+  .nav-link {
+    display: inline-block;
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    color: $crema;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    transition: $transicion-base;
+
+    // Línea dorada animada al hover
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0.75rem;
+      right: 0.75rem;
+      height: 1px;
+      background-color: $dorado;
+      transform: scaleX(1);
+      transition: $transicion-base;
+    }
+
+    &:hover {
+      color: $dorado;
+        transform: scale(1.1);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &.active {
+      color: $dorado;
+    }
+  }
+
+  // --- Botón CTA ---
+  .btn-dorado {
+    font-size: $fs-xs;
+    padding: 0.5rem 1.5rem;
+    border-radius: $borde-radio-sm;
+
+    &:hover {
+      color: $azul-profundo;
+    }
+  }
+
+  // --- Toggler mobile ---
+  .navbar-toggler {
+    border: 1px solid $dorado;
+    padding: 0.4rem 0.6rem;
+    transition: $transicion-base;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A84C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+
+  // --- Menú mobile ---
+  .navbar-collapse {
+    @media (max-width: 991px) {
+      background-color: $azul-profundo;
+      padding: $espaciado-sm;
+      margin-top: $espaciado-xs;
+      border-top: 1px solid $dorado;
+
+      .nav-link::after {
+        display: none;
+      }
+
+      .btn-dorado {
+        display: inline-block;
+        margin-top: $espaciado-xs;
+        text-align: center;
+      }
+    }
+  }
+}

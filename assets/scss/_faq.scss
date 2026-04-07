@@ -1,0 +1,86 @@
+@use 'variables' as *;
+// =========================================
+// _faq.scss
+// =========================================
+
+.faq {
+  background-color: $azul-profundo;
+
+  // --- Item ---
+  .faq-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($dorado, 0.15);
+    margin-bottom: 0;
+    transition: $transicion-base;
+
+    &:first-child {
+      border-top: 1px solid rgba($dorado, 0.15);
+    }
+
+    // Borde izquierdo dorado cuando está abierto
+    &:has(.accordion-collapse.show) {
+      border-left: 3px solid $dorado;
+      background-color: rgba($azul-medio, 0.5);
+    }
+  }
+
+  // --- Botón ---
+  .faq-boton {
+    background-color: transparent;
+    color: $crema;
+    font-family: $font-titulo;
+    font-size: $fs-base;
+    font-weight: $fw-semibold;
+    padding: $espaciado-sm $espaciado-sm;
+    border: none;
+    box-shadow: none;
+    transition: $transicion-base;
+    letter-spacing: 0.02em;
+
+    &:not(.collapsed) {
+      background-color: transparent;
+      color: $dorado;
+      box-shadow: none;
+      letter-spacing: 0.04em;
+
+      &::after {
+        filter: invert(70%) sepia(50%) saturate(500%) hue-rotate(5deg);
+      }
+    }
+
+    &:hover {
+      color: $dorado;
+      padding-left: $espaciado-md;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    // Ícono dorado
+    &::after {
+      filter: invert(70%) sepia(50%) saturate(500%) hue-rotate(5deg);
+      transition: $transicion-base;
+    }
+  }
+
+  // --- Respuesta ---
+  .faq-respuesta {
+    background-color: transparent;
+    color: $texto-claro;
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    line-height: 1.8;
+    padding: 0 $espaciado-md $espaciado-md $espaciado-sm;
+    border: none;
+    border-top: 1px solid rgba($dorado, 0.1);
+
+    // Destacado inicial
+    &::first-line {
+      color: $crema;
+    }
+  }
+}

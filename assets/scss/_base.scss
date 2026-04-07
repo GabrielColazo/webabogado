@@ -1,0 +1,188 @@
+@use 'variables' as *;
+// =========================================
+// _base.scss
+// Reset y estilos globales
+// =========================================
+
+// --- RESET BASE ---
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// --- HTML Y BODY ---
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-cuerpo;
+  font-size: $fs-base;
+  font-weight: $fw-regular;
+  color: $crema;
+  background-color: $azul-profundo;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+// --- TIPOGRAFÍA GENERAL ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-titulo;
+  font-weight: $fw-bold;
+  color: $dorado;
+  line-height: 1.2;
+  margin-bottom: $espaciado-xs;
+}
+
+p {
+  margin-bottom: $espaciado-sm;
+  color: $texto-claro;
+}
+
+a {
+  color: $dorado;
+  text-decoration: none;
+  transition: $transicion-base;
+
+  &:hover {
+    color: $dorado-claro;
+  }
+}
+
+// --- IMÁGENES ---
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// --- LISTAS ---
+ul, ol {
+  list-style: none;
+}
+
+// --- SECCIÓN BASE ---
+section {
+  padding: $espaciado-lg 0;
+}
+
+// --- TÍTULOS DE SECCIÓN ---
+.section-titulo {
+  font-family: $font-titulo;
+  font-size: $fs-xl;
+  color: $dorado;
+  margin-bottom: $espaciado-xs;
+}
+
+.section-subtitulo {
+  font-family: $font-cuerpo;
+  font-size: $fs-md;
+  font-weight: $fw-light;
+  color: $texto-claro;
+  margin-bottom: $espaciado-md;
+}
+
+// --- SEPARADOR DORADO ---
+.separador {
+  width: 60px;
+  height: 2px;
+  background-color: $dorado;
+  margin: $espaciado-xs auto $espaciado-md;
+}
+
+// --- BOTONES GLOBALES ---
+.btn-dorado {
+  display: inline-block;
+  font-family: $font-cuerpo;
+  font-size: $fs-sm;
+  font-weight: $fw-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $azul-profundo;
+  background-color: $dorado;
+  border: 2px solid $dorado;
+  padding: 0.75rem 2rem;
+  border-radius: $borde-radio-sm;
+  transition: $transicion-base;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $dorado-claro;
+    border-color: $dorado-claro;
+    color: $azul-profundo;
+  }
+}
+
+.btn-outline {
+  display: inline-block;
+  font-family: $font-cuerpo;
+  font-size: $fs-sm;
+  font-weight: $fw-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $dorado;
+  background-color: transparent;
+  border: 2px solid $dorado;
+  padding: 0.75rem 2rem;
+  border-radius: $borde-radio-sm;
+  transition: $transicion-base;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $dorado;
+    color: $azul-profundo;
+  }
+}
+
+// --- CLASES UTILITARIAS ---
+.texto-dorado {
+  color: $dorado;
+}
+
+.texto-claro {
+  color: $texto-claro;
+}
+
+.bg-azul-medio {
+  background-color: $azul-medio;
+}
+
+// --- Banner demo ---
+.demo-banner {
+  background-color: rgba($azul-medio, 0.95);
+  border-bottom: 1px solid rgba($dorado, 0.3);
+  padding: 0.4rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1050;
+
+  .demo-banner-texto {
+    font-family: $font-cuerpo;
+    font-size: $fs-xs;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    margin-bottom: 0;
+    letter-spacing: 0.03em;
+
+    i {
+      color: $dorado;
+      margin-right: 6px;
+    }
+
+    a {
+      color: $dorado;
+      font-weight: $fw-semibold;
+      text-decoration: none;
+
+      &:hover {
+        color: $dorado-claro;
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@use 'variables' as *;
+// =========================================
+// _contacto.scss
+// =========================================
+
+.contacto {
+  background-color: $azul-medio;
+
+  // --- Datos de contacto ---
+  .contacto-datos {
+    display: flex;
+    flex-direction: column;
+    gap: $espaciado-md;
+  }
+
+  .contacto-dato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: $transicion-base;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+
+    i {
+      font-size: $fs-md;
+      color: $dorado;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+  }
+
+  .contacto-dato-titulo {
+    display: block;
+    font-family: $font-cuerpo;
+    font-size: $fs-xs;
+    font-weight: $fw-semibold;
+    color: $dorado;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .contacto-datos a,
+  .contacto-datos span {
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    color: $texto-claro;
+    line-height: 1.6;
+    transition: $transicion-base;
+
+    &:hover {
+      color: $crema;
+    }
+  }
+
+  // --- Formulario ---
+  .contacto-form {
+    border-left: 1px solid rgba($dorado, 0.2);
+    padding-left: $espaciado-md;
+  }
+
+  // --- Inputs ---
+  .contacto-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($dorado, 0.3);
+    border-radius: 0;
+    padding: 0.75rem 0;
+    color: $crema;
+    font-family: $font-cuerpo;
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    outline: none;
+    transition: $transicion-base;
+    resize: none;
+
+    &::placeholder {
+      color: rgba($texto-claro, 0.5);
+      font-size: $fs-sm;
+    }
+
+    &:focus {
+      border-bottom-color: $dorado;
+      color: $crema;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  // --- Botón ---
+  .btn-dorado {
+    margin-top: $espaciado-xs;
+  }
+}
