@@ -1,0 +1,18 @@
+# Extensiones de editores (basura de VS Code)
+.vscode/
+.history/
+
+# Archivos de sistema
+Thumbs.db
+.DS_Store
+
+# SASS / CSS
+.sass-cache/
+*.css.map
+*.sass.map
+
+# Node (por si en el futuro usas paquetes)
+node_modules/
+
+# Archivos de configuración de despliegue
+.netlify/
