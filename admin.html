@@ -482,9 +482,9 @@
           <td>${t.telefono}</td>
           <td><span class="badge-estado badge-${t.estado}">${t.estado}</span></td>
           <td>
-            ${t.estado === 'reservado' ? `<button class="btn-accion btn-atendido" onclick="cambiarEstado(${t.id}, 'atendido')"><i class="bi bi-check-circle"></i> Atendido</button>` : ''}
-            ${t.estado !== 'cancelado' ? `<button class="btn-accion btn-cancelar" onclick="cambiarEstado(${t.id}, 'cancelado')"><i class="bi bi-x-circle"></i> Cancelar</button>` : `<button class="btn-accion btn-atendido" onclick="cambiarEstado(${t.id}, 'reservado')"><i class="bi bi-arrow-counterclockwise"></i> Reactivar</button>`}
-          </td>
+  ${t.estado === 'reservado' ? `<button class="btn-accion btn-atendido" onclick="cambiarEstado(${t.id}, 'atendido')"><i class="bi bi-check-circle"></i> Atendido</button>` : ''}
+  ${t.estado !== 'cancelado' ? `<button class="btn-accion btn-cancelar" onclick="cambiarEstado(${t.id}, 'cancelado')"><i class="bi bi-x-circle"></i> Cancelar</button>` : `<button class="btn-accion btn-atendido" onclick="cambiarEstado(${t.id}, 'reservado')"><i class="bi bi-arrow-counterclockwise"></i> Reactivar</button>`}
+</td>
         </tr>
       `).join('')
         }
