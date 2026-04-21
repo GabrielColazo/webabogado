@@ -247,7 +247,7 @@ setTimeout(function() {
 
     const fechaStr = y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0')
 
-    const { data } = await sb.from('turnos').select('hora').eq('fecha', fechaStr)
+    const { data } = await sb.from('turnos').select('hora').eq('fecha', fechaStr).eq('estado', 'reservado')
     ocupados = data ? data.map(t => t.hora) : []
 
     elSlots.innerHTML = ''
