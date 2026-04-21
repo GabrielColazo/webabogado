@@ -18,6 +18,9 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <!-- CSS compilado -->
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -26,16 +29,16 @@
     <!-- ================================
   BANNER DEMO
 ================================ -->
-<div class="demo-banner">
-  <div class="container">
-    <p class="demo-banner-texto">
-      <i class="bi bi-info-circle-fill"></i>
-      Este sitio es una simulación creada con fines de demostración para el portfolio de 
-      <a href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a>
-      — No representa un estudio jurídico real.
-    </p>
-  </div>
-</div>
+    <div class="demo-banner">
+        <div class="container">
+            <p class="demo-banner-texto">
+                <i class="bi bi-info-circle-fill"></i>
+                Este sitio es una simulación creada con fines de demostración para el portfolio de
+                <a href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a>
+                — No representa un estudio jurídico real.
+            </p>
+        </div>
+    </div>
 
     <!-- ================================
   NAVBAR
@@ -71,6 +74,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#turnos">Turnos</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " href="#contacto">Contacto</a>
@@ -505,183 +511,249 @@
     </section>
 
     <!-- ================================
-  CONTACTO
+  TURNOS
 ================================ -->
-<section id="contacto" class="contacto">
+<section id="turnos" class="turnos">
   <div class="container">
 
     <div class="row text-center mb-5">
       <div class="col-12">
-        <h2 class="section-titulo">Contacto</h2>
+        <h2 class="section-titulo">Reservá tu turno</h2>
         <div class="separador"></div>
-        <p class="section-subtitulo">Estamos disponibles para atender su consulta</p>
+        <p class="section-subtitulo">Seleccioná un día y horario disponible</p>
       </div>
     </div>
 
-    <div class="row justify-content-center g-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
 
-      <!-- Datos de contacto -->
-      <div class="col-12 col-md-4">
-        <div class="contacto-datos">
-
-          <div class="contacto-dato-item">
-            <i class="bi bi-telephone-fill"></i>
-            <div>
-              <span class="contacto-dato-titulo">Teléfono</span>
-              <a href="tel:+541100000000">+54 11 0000-0000</a>
-            </div>
-          </div>
-
-          <div class="contacto-dato-item">
-            <i class="bi bi-envelope-fill"></i>
-            <div>
-              <span class="contacto-dato-titulo">Email</span>
-              <a href="mailto:contacto@estudiomartinez.com">contacto@estudiomartinez.com</a>
-            </div>
-          </div>
-
-          <div class="contacto-dato-item">
-            <i class="bi bi-geo-alt-fill"></i>
-            <div>
-              <span class="contacto-dato-titulo">Dirección</span>
-              <span>Av. Corrientes 1234, Piso 5<br>Ciudad Autónoma de Buenos Aires</span>
-            </div>
-          </div>
-
-          <div class="contacto-dato-item">
-            <i class="bi bi-clock-fill"></i>
-            <div>
-              <span class="contacto-dato-titulo">Horario</span>
-              <span>Lun a Vie: 9:00 — 18:00 hs<br>Guardia penal: 24/7</span>
-            </div>
-          </div>
-
+        <!-- Navegación de mes -->
+        <div class="turnos-mes-nav">
+          <button class="turnos-nav-btn" id="btn-mes-ant">&#8592; anterior</button>
+          <span class="turnos-mes-label" id="mes-label"></span>
+          <button class="turnos-nav-btn" id="btn-mes-sig">siguiente &#8594;</button>
         </div>
-      </div>
 
-      <!-- Formulario -->
-      <div class="col-12 col-md-5">
-        <div class="contacto-form">
+        <!-- Calendario -->
+        <div class="turnos-calendario" id="turnos-calendario"></div>
 
+        <!-- Horarios -->
+        <div class="turnos-horarios" id="turnos-horarios" style="display:none">
+          <p class="turnos-horarios-titulo">Horarios disponibles</p>
+          <div class="turnos-slots" id="turnos-slots"></div>
+        </div>
+
+        <!-- Resumen selección -->
+        <div class="turnos-resumen" id="turnos-resumen" style="display:none"></div>
+
+        <!-- Formulario -->
+        <div class="turnos-form-wrapper" id="turnos-form" style="display:none">
           <div class="mb-3">
-            <input type="text" class="contacto-input" placeholder="Nombre completo">
+            <input type="text" class="contacto-input" id="turno-nombre" placeholder="Nombre completo">
           </div>
-
           <div class="mb-3">
-            <input type="email" class="contacto-input" placeholder="Email">
+            <input type="text" class="contacto-input" id="turno-dni" placeholder="DNI">
           </div>
-
-          <div class="mb-3">
-            <input type="tel" class="contacto-input" placeholder="Teléfono">
-          </div>
-
           <div class="mb-4">
-            <textarea class="contacto-input" rows="4" placeholder="Su consulta..."></textarea>
+            <input type="tel" class="contacto-input" id="turno-tel" placeholder="Teléfono celular">
           </div>
-
-          <button type="button" class="btn-dorado w-100">Enviar consulta</button>
-
+          <button type="button" class="btn-dorado w-100" id="btn-confirmar">Confirmar turno</button>
         </div>
-      </div>
 
+        <!-- Mensaje éxito -->
+        <div class="turnos-exito" id="turnos-exito" style="display:none">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Turno reservado con éxito. Le enviaremos la confirmación.</p>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================================
+    <!-- ================================
+  CONTACTO
+================================ -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-titulo">Contacto</h2>
+                    <div class="separador"></div>
+                    <p class="section-subtitulo">Estamos disponibles para atender su consulta</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-5">
+
+                <!-- Datos de contacto -->
+                <div class="col-12 col-md-4">
+                    <div class="contacto-datos">
+
+                        <div class="contacto-dato-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <span class="contacto-dato-titulo">Teléfono</span>
+                                <a href="tel:+541100000000">+54 11 0000-0000</a>
+                            </div>
+                        </div>
+
+                        <div class="contacto-dato-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <span class="contacto-dato-titulo">Email</span>
+                                <a href="mailto:contacto@estudiomartinez.com">contacto@estudiomartinez.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contacto-dato-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <span class="contacto-dato-titulo">Dirección</span>
+                                <span>Av. Corrientes 1234, Piso 5<br>Ciudad Autónoma de Buenos Aires</span>
+                            </div>
+                        </div>
+
+                        <div class="contacto-dato-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <div>
+                                <span class="contacto-dato-titulo">Horario</span>
+                                <span>Lun a Vie: 9:00 — 18:00 hs<br>Guardia penal: 24/7</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="col-12 col-md-5">
+                    <div class="contacto-form">
+
+                        <div class="mb-3">
+                            <input type="text" class="contacto-input" placeholder="Nombre completo">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="contacto-input" placeholder="Email">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="tel" class="contacto-input" placeholder="Teléfono">
+                        </div>
+
+                        <div class="mb-4">
+                            <textarea class="contacto-input" rows="4" placeholder="Su consulta..."></textarea>
+                        </div>
+
+                        <button type="button" class="btn-dorado w-100">Enviar consulta</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
   FOOTER
 ================================ -->
-<footer class="footer">
-  <div class="container">
+    <footer class="footer">
+        <div class="container">
 
-    <div class="row g-4 align-items-start py-4 justify-content-between">
+            <div class="row g-4 align-items-start py-4 justify-content-between">
 
-      <!-- Logo y descripción -->
-      <div class="col-12 col-md-6">
-        <div class="footer-brand">
-          <span class="footer-logo-titulo">
-            <i class="bi bi-bank"></i> Dr. Martínez
-          </span>
-          <p class="footer-logo-subtitulo">Estudio Jurídico Penal</p>
+                <!-- Logo y descripción -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-brand">
+                        <span class="footer-logo-titulo">
+                            <i class="bi bi-bank"></i> Dr. Martínez
+                        </span>
+                        <p class="footer-logo-subtitulo">Estudio Jurídico Penal</p>
+                    </div>
+                    <p class="footer-texto">Defensa penal profesional con más de 20 años de experiencia en el fuero
+                        penal argentino.</p>
+                    <div class="footer-redes">
+                        <a href="#" class="footer-red" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="footer-red" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-red" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-red" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navegación -->
+                <div class="col-12 col-md-3">
+                    <h4 class="footer-titulo">Navegación</h4>
+                    <ul class="footer-lista">
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#sobremi">Sobre mí</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-copy">
+                        <p>&copy; 2025 Dr. Martínez — Estudio Jurídico Penal. Todos los derechos reservados.</p>
+                        <p class="footer-demo">Sitio de demostración creado para el portfolio de <a
+                                href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <p class="footer-texto">Defensa penal profesional con más de 20 años de experiencia en el fuero penal argentino.</p>
-        <div class="footer-redes">
-          <a href="#" class="footer-red" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="#" class="footer-red" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="footer-red" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="footer-red" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-        </div>
-      </div>
+    </footer>
 
-      <!-- Navegación -->
-      <div class="col-12 col-md-3">
-        <h4 class="footer-titulo">Navegación</h4>
-        <ul class="footer-lista">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#sobremi">Sobre mí</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Copyright -->
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-copy">
-          <p>&copy; 2025 Dr. Martínez — Estudio Jurídico Penal. Todos los derechos reservados.</p>
-          <p class="footer-demo">Sitio de demostración creado para el portfolio de <a href="https://gaboweb.com.ar" target="_blank" rel="noopener noreferrer">Gabo Web</a></p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-<!-- ================================
+    <!-- ================================
   MODAL OFERTA
 ================================ -->
-<div class="modal fade" id="modalOferta" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered mx-5 mx-sm-auto">
-    <div class="modal-content modal-custom">
+    <div class="modal fade" id="modalOferta" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mx-5 mx-sm-auto">
+            <div class="modal-content modal-custom">
 
-      <!-- Cerrar -->
-      <button type="button" class="modal-cerrar" data-bs-dismiss="modal" aria-label="Cerrar">
-        <i class="bi bi-x-lg"></i>
-      </button>
+                <!-- Cerrar -->
+                <button type="button" class="modal-cerrar" data-bs-dismiss="modal" aria-label="Cerrar">
+                    <i class="bi bi-x-lg"></i>
+                </button>
 
-      <!-- Contenido -->
-      <div class="modal-body text-center p-5">
+                <!-- Contenido -->
+                <div class="modal-body text-center p-5">
 
-        <div class="modal-icono">
-          <i class="bi bi-bank"></i>
+                    <div class="modal-icono">
+                        <i class="bi bi-bank"></i>
+                    </div>
+
+                    <p class="modal-eyebrow">Oferta por tiempo limitado</p>
+
+                    <h3 class="modal-titulo">Primera consulta gratuita y sin compromiso</h3>
+
+                    <p class="modal-texto">Evaluamos su caso de forma confidencial y le brindamos orientación jurídica
+                        sin cargo. No espere, actúe hoy.</p>
+
+                    <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer"
+                        class="btn-dorado d-inline-block mt-2">
+                        Quiero mi consulta gratis
+                    </a>
+
+                    <p class="modal-pie">* Válido para nuevos clientes. Por tiempo limitado.</p>
+
+                </div>
+            </div>
         </div>
-
-        <p class="modal-eyebrow">Oferta por tiempo limitado</p>
-
-        <h3 class="modal-titulo">Primera consulta gratuita y sin compromiso</h3>
-
-        <p class="modal-texto">Evaluamos su caso de forma confidencial y le brindamos orientación jurídica sin cargo. No espere, actúe hoy.</p>
-
-        <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" class="btn-dorado d-inline-block mt-2">
-          Quiero mi consulta gratis
-        </a>
-
-        <p class="modal-pie">* Válido para nuevos clientes. Por tiempo limitado.</p>
-
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- ================================
+    <!-- ================================
   WHATSAPP FLOTANTE
 ================================ -->
-<a href="https://wa.me/5491100000000" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
+    <a href="https://wa.me/5491100000000" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

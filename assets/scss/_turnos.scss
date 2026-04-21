@@ -1,0 +1,134 @@
+@use 'variables' as *;
+
+// =========================================
+// WEBABOGADO TURNOS
+// =========================================
+
+.turnos {
+  padding: 80px 0;
+  background-color: $azul-profundo;
+
+  &-mes-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &-mes-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: $dorado;
+  }
+
+  &-nav-btn {
+    background: none;
+    border: 1px solid $dorado;
+    color: $dorado;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    &:hover { background: $dorado; color: $azul-profundo; }
+  }
+
+  &-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 2rem;
+  }
+
+  &-dia-header {
+    text-align: center;
+    font-size: 0.75rem;
+    color: $texto-claro;
+    padding: 4px 0;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  &-dia {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+
+    &.vacio { background: none; }
+    &.no-disponible { color: rgba($blanco, 0.2); cursor: default; }
+    &.hoy { font-weight: 600; }
+    &.disponible {
+      border: 1px solid rgba($dorado, 0.3);
+      color: $blanco;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover { border-color: $dorado; color: $dorado; }
+    }
+    &.seleccionado { background: $dorado; color: $azul-profundo; font-weight: 600; border-color: $dorado; }
+  }
+
+  &-horarios-titulo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $texto-claro;
+    margin-bottom: 1rem;
+  }
+
+  &-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  &-slot {
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'Raleway', sans-serif;
+
+    &.libre {
+      border: 1px solid rgba($dorado, 0.4);
+      color: $blanco;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover { border-color: $dorado; color: $dorado; }
+      &.activo { background: $dorado; color: $azul-profundo; border-color: $dorado; }
+    }
+    &.ocupado {
+      background: rgba($blanco, 0.05);
+      color: rgba($blanco, 0.2);
+      text-decoration: line-through;
+      cursor: default;
+    }
+  }
+
+  &-resumen {
+    background: rgba($dorado, 0.1);
+    border: 1px solid rgba($dorado, 0.3);
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    color: $dorado;
+    margin-bottom: 1.5rem;
+  }
+
+  &-form-wrapper {
+    max-width: 480px;
+  }
+
+  &-exito {
+    text-align: center;
+    padding: 2rem;
+    color: #7dcea0;
+    font-family: 'Raleway', sans-serif;
+    i { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  }
+}
